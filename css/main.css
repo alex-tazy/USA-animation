@@ -1,0 +1,827 @@
+/*#################
+### CUSTOM CLASSES
+#################*/
+*, html, body {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+}
+body {
+  padding-top: 0px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  background: black;
+}
+section {
+  min-height: 100vh;
+}
+
+/* Classe pour opposer les deux bg dans le ssections */
+.oposite-container {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+.oposite {
+  width: 50%;
+}
+
+/* Class for color */
+.blue {
+  color: #4651ff;
+}
+.red {
+  color: red;
+}
+.bg-text {
+  background: #000;
+}
+
+/*** home ***/
+#home {
+  background: url(../img/home_bg.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 5px;
+  -moz-transform: perspective(1000px);
+  -moz-transform-style: preserve-3d;
+  -webkit-perspective: 1000px;
+}
+.text-home {
+  margin-top: 40vh;
+}
+.text-home h1 {
+  font-size: 65px;
+}
+.subtext {
+  font-family: 'Open Sans', sans-serif;
+  color: #bdbdbd;
+  font-size: 1.8rem;
+  line-height: 3rem;
+}
+.mouse {
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  margin: 20vh auto 2vh auto;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 30px;
+  opacity: .3;
+}
+.mouse:after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  margin-left: -3px;
+  background-color: white;
+  border-radius: 2px;
+  animation: mouse-wheel 2.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+@keyframes mouse-wheel {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(0);
+    height: 4px;
+  }
+  50% {
+    transform: translateY(0);
+    height: 20px;
+  }
+  70% {
+    transform: translateY(15px);
+    height: 4px;
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+/*** Section 1 Inauguration ***/
+#inauguration .oposite {
+  position: relative;
+  text-align: left;
+}
+#inauguration small {
+  color: #bdbdbd;
+  font-size: 1.8rem;
+  font-family: 'Open Sans', sans-serif;
+}
+#pin-inauguration {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#inauguration-1 {
+  background: url(../img/inauguration/inauguration_bg_1789.jpg);
+  background-size: cover;
+}
+#inauguration-1 p {
+  position: absolute;
+  font-size: 2.3rem;
+  bottom: 10vw;
+  right: calc(0% - 100px);
+  z-index: 9;
+  max-width: 425px;
+  text-align: left;
+}
+#inauguration-washington {
+  max-height: 90vh;
+  position: absolute;
+  bottom: 0;
+}
+#wash-text, #trump-text {
+  opacity: 0;
+}
+#inauguration-2 {
+  background: url(../img/inauguration/inauguration_bg_2016.jpg);
+  background-size: cover;
+}
+#inauguration-2 p {
+  position: absolute;
+  font-size: 2.3rem;
+  top: calc(50% - 100px);
+  left: calc(0% - 100px);
+  z-index: 9;
+  max-width: 425px;
+  text-align: left;
+}
+#inauguration-trump {
+  max-height: 100vh;
+  position: absolute;
+  bottom: -80px;
+}
+
+/*** Section 2 Campaign Cost **/
+#campaignCost .text-ctn {
+  position: absolute;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  top: calc(30% - 100px);
+  left: calc(33% - 100px);
+  z-index: 9;
+  max-width: 500px;
+  text-align: center;
+}
+.cost-p {
+  line-height: 47px;
+}
+#campaignCost h1 {
+  font-size: 200px;
+  margin-bottom: 20px;
+}
+#campaignCost .oposite {
+  position: relative;
+  text-align: left;
+}
+#pin-campaignCost {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#campaignCost-1 {
+  background: url(../img/campaigncost/campaign_bg_1789.jpg);  /* background-position: 20% 40%; */
+}
+#campaignCost-2 {
+  background: url(../img/campaigncost/campaign_bg_2016.jpg);  /* background-position: 50%; */
+}
+
+/*** Section 3 Electoral College ***/
+#electoralCollege {
+  min-height: 100vh;
+}
+#electoralCollege .candidate-wrap {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  opacity: 0;
+  margin-top: 100px;
+  transition: all 0.6s ease-out;
+}
+#electoralCollege .round-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+  margin: 0 auto 40px;
+}
+#electoralCollege .round-img img {
+  width: 100%;
+}
+#electoralCollege p {
+  text-align: left;
+}
+#electoralCollege .title-relative {
+  width: 100%;
+  text-align: center;
+  font-size: 26px;
+}
+#electoralCollege .subtext {
+  font-size: 12px;
+}
+#electoralCollege-1 {
+  background: url(../img/electoralcollege/electoral_bg_1789.jpg);
+  background-size: cover;
+  padding: 34vh 20px 40px;
+  transition: all 0.4s ease;
+}
+#electoralCollege-2 {
+  background: url(../img/electoralcollege/electoral_bg_2016.jpg);
+  background-size: cover;
+  padding: 20vh 20px 40px;
+  transition: all 0.4s ease;
+}
+#electoralCollege-2 .round-img.little {
+  display: inline-block;
+  vertical-align: middle;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  margin: 0;
+}
+#electoralCollege-2 .round-img.little.first {
+  margin-right: 10px;
+}
+#electoralCollege-2 .round-img.little.second {
+  margin-left: 10px;
+}
+#electoralCollege-2 .vertical-border {
+  display: inline-block;
+  vertical-align: middle;
+  height: 40px;
+  width: 2px;
+  background: #fff;
+}
+#electoralCollege-2 .party-logo {
+  width: 40px;
+  margin: 0 auto;
+}
+#electoralCollege-2 .party-logo img {
+  width: 100%;
+}
+#electoralCollege .title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  top: 10%;
+}
+
+/*** /Section 3 Electoral College ***/
+
+/*** Section 4 States ***/
+
+#states-1 {
+  background: url(../img/states/states_bg_1789.jpg);
+  background-size: cover;
+}
+#states-2 {
+  background: url(../img/states/states_bg_2016.jpg);
+  background-size: cover;
+}
+#states-1 #states-map-washington {
+  position: absolute;
+  top: calc(30% - 100px);
+  left: calc(13% - 100px);
+  max-width: 550px;
+}
+#states-1 h2 {
+  position: absolute;
+  font-size: 40px;
+  top: calc(60% - 100px);
+  left: calc(13% - 100px);
+  max-width: 500px;
+  text-align: left;
+}
+#states-1 #states-flag-washington {
+  position: absolute;
+  top: calc(68% - 100px);
+  left: calc(13% - 100px);
+  max-width: 180px;
+}
+#states-1 p {
+  position: absolute;
+  top: calc(80% - 100px);
+  left: calc(13% - 100px);
+  max-width: 500px;
+  text-align: left;
+}
+#states-2 #states-map-trump {
+  position: absolute;
+  top: calc(30% - 100px);
+  left: calc(63% - 100px);
+  max-width: 550px;
+}
+#states-2 h2 {
+  position: absolute;
+  font-size: 40px;
+  top: calc(60% - 100px);
+  left: calc(63% - 100px);
+  max-width: 500px;
+  text-align: left;
+}
+#states-2 #states-flag-trump {
+  position: absolute;
+  top: calc(68% - 100px);
+  left: calc(63% - 100px);
+  max-width: 180px;
+}
+#states-2 p {
+  position: absolute;
+  top: calc(80% - 100px);
+  left: calc(63% - 100px);
+  max-width: 500px;
+  text-align: left;
+}
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear alternate infinite;
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*** /Section 4 States ***/
+
+/*** Section 5 States ***/
+#politicalParties .oposite {
+  height: 100vh;
+  position: absolute;
+}
+#politicalParties .text-ctn {
+  font-size: 24px;
+}
+#parties1 {
+  background: url(../img/politicalparties/bg-left.jpg);
+  background-size: cover;
+  left: 0;
+  padding: 100px;
+}
+#parties2 {
+  background: url(../img/politicalparties/bg-right.jpg);
+  background-size: cover;
+  right: 0;
+  height: 100vh;
+}
+#parties2 .text-ctn {
+  padding: 40px;
+}
+.logos-wrapper {
+  position: relative;
+  width: 70%;
+  margin: 10% 0 0 8%;
+  height: 40vh;
+}
+.logos-wrapper div {
+  position: absolute;
+  width: 33%;
+  transform: scale(0);
+}
+.logos-wrapper div img {
+  width: 100%;
+}
+.logos-wrapper div.green {
+  left: 0;
+  padding-right: 10%;
+}
+.logos-wrapper div.constitution {
+  left: 33%;
+}
+.logos-wrapper div.democrates {
+  left: 63%;
+  top: -20px;
+}
+.logos-wrapper div.libertarian {
+  top: 22%;
+  left: 20%;
+}
+.logos-wrapper div.republicain {
+  top: 28%;
+  left: 56%;
+}
+.logos-wrapper div.modern-whig {
+  top: 20%;
+  left: 84%;
+}
+.logos-wrapper div.modern-whig img {
+  width: 80%;
+}
+.logos-wrapper div.logo-animate {
+  animation: logoAnimation 0.8s ease;
+}
+@keyframes logoAnimation {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#logo-parties-wash {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 40px;
+  transform: scale(0);
+}
+#logo-parties-wash.logo-animate {
+  animation: logoAnimation 0.8s ease;
+  transform: scale(1);
+}
+#logo-parties-wash img {
+  width: 100%;
+}
+
+/*** /Section 5 States ***/
+
+/*** Section 6 theMedia ***/
+#theMedia-1 {
+  background: url(../img/themedia/media_bg_1789.jpg);
+  background-size: cover;
+}
+#theMedia-1 p {
+  position: absolute;
+  font-size: 3.5rem;
+  top: 250px;
+  right: calc(63% - 100px);
+  z-index: 9;
+  max-width: 500px;
+  text-align: right;
+}
+#theMedia-washington {
+  max-height: 50vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#theMedia-2 {
+  background: url(../img/themedia/media_bg_2016.jpg);
+  background-size: cover;
+}
+#theMedia-2 p {
+  position: absolute;
+  font-size: 3.5rem;
+  top: 150px;
+  left: calc(63% - 100px);
+  z-index: 9;
+  max-width: 425px;
+  text-align: left;
+}
+#theMedia-trump {
+  max-height: 60vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/*** /Section 6 theMedia ***/
+
+/*** Section 7 Candidates lives  ***/
+
+#candidatesLives .oposite {
+  position: relative;
+  text-align: left;
+}
+#candidatesLives small {
+  color: #bdbdbd;
+  font-size: 1.8rem;
+}
+#pin-candidatesLives {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#candidatesLives-1 {
+  background: url(../img/candidateslives/candidates_bg_1789.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#candidatesLives-1 h2 {
+  font-size: 300%;
+  z-index: 9;
+}
+#candidatesLives-washington {
+  max-height: 90vh;
+  position: absolute;
+  bottom: 0;
+}
+#candidatesLives-2 {
+  background: url(../img/candidateslives/candidates_bg_2016.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#candidatesLives-2 h2 {
+  font-size: 300%;
+  z-index: 9;
+}
+#candidatesLives-trump {
+  max-height: 100vh;
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+}
+
+/*** / Section 7 Candidates lives  ***/
+
+/*#################
+### MENU
+#################*/
+
+footer {
+  position: fixed;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #000;
+  padding: 20px;
+  z-index: 100;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-credits {
+  width: 16px;
+  height: 16px;
+  background: url("../img/credits.svg") 0 0 no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  padding-right: 100px;
+}
+.social {
+  max-width: 100px;
+  width: 100%;
+}
+.social div {
+  width: 16px;
+  display: inline-block;
+  height: 16px;
+  cursor: pointer;
+}
+.social .facebook {
+  background: url("../img/facebook.svg") 0 0 no-repeat;
+  background-size: contain;
+}
+.social .twitter {
+  background: url("../img/twitter.svg") 0 0 no-repeat;
+  background-size: contain;
+  margin-left: 20px;
+}
+.social .mail {
+  background: url("../img/mail.svg") 0 0 no-repeat;
+  background-size: contain;
+  margin-left: 20px;
+}
+.container-bullet {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  text-transform: uppercase;
+}
+.container-bullet a {
+  display: inline-block;
+}
+.section-name {
+  display: inline-block;
+  vertical-align: middle;
+  color: #fff;
+  letter-spacing: 0;
+  font-size: 12px;
+  width: 0;
+  overflow: hidden;
+}
+.section-name span {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: block;
+  min-width: 160px;
+}
+.bullet {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.bullet .bullet-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  border: 1px solid #fff;
+  opacity: 0.6;
+}
+.bullet .bullet-border.transition {
+  transform: scale(3);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+.bullet .point {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: #fff;
+  transition: background 0.8s linear;
+}
+
+/*#################
+### CREDITS
+#################*/
+.close {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 40px;
+  height: 40px;
+  background: url("../img/close.svg") 0 0 no-repeat;
+  background-size: contain;
+}
+#credits {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
+  background: transparent;
+}
+#credits .transition {
+  display: none;
+  transform: translateX(80px);
+  transition: all 1.6s ease;
+}
+#credits .left, #credits .right {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.89);
+  transition: all 1.2s ease;
+}
+#credits .content {
+  position: relative;
+  padding: 22vh 16vw;
+  text-align: center;
+}
+#credits .left {
+  right: 50vw;
+}
+#credits .right {
+  left: 50vw;
+}
+#credits h2 {
+  font-size: 72px;
+  color: #fff;
+  font-weight: 600;
+}
+#credits .border {
+  height: 2px;
+  background: #930000;
+  margin-left: 10px;
+  margin-top: 30px;
+}
+#credits p {
+  margin-top: 80px;
+  font-size: 1.8rem;
+  font-family: 'Open Sans', sans-serif;
+  color: #bdbdbd;
+}
+@-webkit-keyframes bake-pie {
+  from {
+    -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+@keyframes bake-pie {
+  from {
+    -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+.pie-chart {
+  font-family: "Open Sans", Arial;
+}
+.pie-chart--wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+.pie-chart__pie, .pie-chart__legend {
+  display: inline-block;
+  vertical-align: top;
+}
+.pie-chart__pie {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: 10px auto 35px;
+}
+.pie-chart__pie::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
+  margin: 220px auto;
+}
+.slice {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  clip: rect(0px, 200px, 200px, 100px);
+  -webkit-animation: bake-pie 1s;
+  animation: bake-pie 1s;
+}
+.slice span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+}
+.pie-chart__legend {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
+}
+.pie-chart__legend li {
+  text-align: right;
+  margin-bottom: 0.7em;
+  padding-left: 0.5em;
+  opacity: 0;
+  transition: all 0.6s linear;
+}
+.pie-chart__legend em {
+  font-style: normal;
+  text-align: right;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+.pie-chart__legend span {
+  text-align: right;
+  display: block;
+  font-size: 42px;
+}
+.pie-charts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+#chart3, #chart4 {
+  margin-top: -32vh;
+  margin-left: -100%;
+  opacity: 0;
+}
